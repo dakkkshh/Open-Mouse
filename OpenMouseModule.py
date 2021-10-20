@@ -4,6 +4,8 @@ import HandTrackingModule as htm
 import time
 import autopy
 
+# from autopy.mouse import LEFT_BUTTON
+
 wCam, hCam = 640, 480
 frameR = 100  # Frame Reduction
 smoothening = 7
@@ -48,7 +50,7 @@ while True:
                 cv2.circle(img, (x1, y1), 15, (0, 255, 0), cv2.FILLED)
                 plocX, plocY = clocX, clocY
             # Both Index and middle fingers are up : Clicking Mode
-            if fingers[1] == 1 and fingers[2] == 1:
+            if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 0 and fingers[4] == 0:
                 # Find distance between fingers
                 length, img, lineInfo = detector.findDistance(8, 12, img)
                 print(length)
@@ -56,6 +58,13 @@ while True:
                 if length <= 40:
                     cv2.circle(img, (lineInfo[4], lineInfo[5]), 15, (34, 139, 34), cv2.FILLED)
                     autopy.mouse.click()
+            # LEFT_BUTTON_CLICK
+            # if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 0:
+            #     length1, img, lineInfo2 = detector.findDistance(8, 12, img)
+            #     length2, img, lineInfo3 = detector.findDistance(12, 16, img)
+            #     if length1 <= 40 and length2 <= 40:
+            #         cv2.circle(img, (lineInfo2[2], lineInfo2[3]), 15, (0, 0, 0), cv2.FILLED)
+            #         autopy.mouse.click(LEFT_BUTTON)
 
     # Frame Rate
     cTime = time.time()
