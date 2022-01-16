@@ -1,6 +1,10 @@
 # Open-Mouse
 This is a Virtual Mouse software with codebase in **python**. It uses packages **autopy**, **openCV** and **MediaPipe**.
 ## Hand Tracking Module
+https://github.com/dakkkshh/Open-Mouse/blob/main/HandTrackingModuleDemo.mp4?raw=true
+
+## Open Mouse Module
+https://github.com/dakkkshh/Open-Mouse/blob/main/OpenMouseModuleDemo.mp4?raw=true
 
 It tracks down the hand movement and if these movements are within the given rectangle, them it will change cursor's position based on these hand movements.
 If Index finger is up then it it considered to be in Hovering Mode
